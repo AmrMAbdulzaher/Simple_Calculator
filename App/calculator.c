@@ -12,7 +12,7 @@ void main(void)
 	PORT_voidInit();
 	CLCD_voidInit();
 
-	uint8 Local_u8KPDKey=0xff;
+	uint8 Local_u8KPDKey=NO_KEY_PRESSED;
 	uint8 Local_u8InputCounter=0;
 	sint16 Local_s16FirstNumber=0;
 	sint16 Local_s16SecondNumber=0;
@@ -31,14 +31,14 @@ void main(void)
 				do
 				{
 					Local_u8KPDKey = KPD_u8GetPressedKey();
-				}while(Local_u8KPDKey == 0xff || Local_u8KPDKey == '=' || Local_u8KPDKey == '/' || Local_u8KPDKey == '+' || Local_u8KPDKey == '*' || Local_u8KPDKey == '-');
+				}while(Local_u8KPDKey == NO_KEY_PRESSED || Local_u8KPDKey == '=' || Local_u8KPDKey == '/' || Local_u8KPDKey == '+' || Local_u8KPDKey == '*' || Local_u8KPDKey == '-');
 			}
 			else
 			{
 				do
 				{
 					Local_u8KPDKey = KPD_u8GetPressedKey();
-				}while(Local_u8KPDKey == 0xff);
+				}while(Local_u8KPDKey == NO_KEY_PRESSED);
 			}
 
 			if(Local_u8InputCounter > 0)
@@ -79,7 +79,7 @@ void main(void)
 				do
 				{
 					Local_u8KPDKey = KPD_u8GetPressedKey();
-				}while(Local_u8KPDKey == 0xff || Local_u8KPDKey == '/' || Local_u8KPDKey == '+' || Local_u8KPDKey == '*' || Local_u8KPDKey == '-');
+				}while(Local_u8KPDKey == NO_KEY_PRESSED || Local_u8KPDKey == '/' || Local_u8KPDKey == '+' || Local_u8KPDKey == '*' || Local_u8KPDKey == '-');
 
 				if(Local_u8KPDKey == '!' || Local_u8KPDKey == '=')
 				{
@@ -142,6 +142,6 @@ void main(void)
 		Local_s32ResultIntegerPart=0;
 		Local_s32ResultFractionPart=0;
 		Local_u8Operator=0;
-		Local_u8KPDKey= 0xff;
+		Local_u8KPDKey= NO_KEY_PRESSED;
 	}
 }
