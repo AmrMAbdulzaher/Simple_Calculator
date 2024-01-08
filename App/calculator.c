@@ -5,6 +5,7 @@
 #include "../MCAL/PORT/PORT_interface.h"
 #include "../HAL/CLCD/CLCD_interface.h"
 #include "../HAL/KPD/KPD_interface.h"
+#include "calculator.h"
 
 void main(void)
 {
@@ -23,7 +24,7 @@ void main(void)
 	while(1)
 	{
 		/*Store digits in the first number variable*/
-		while(Local_u8InputCounter != 16 || Local_u8KPDKey != '!' || Local_u8KPDKey != '=' || Local_u8KPDKey != '/' || Local_u8KPDKey != '+' || Local_u8KPDKey != '*' || Local_u8KPDKey != '-')
+		while(Local_u8InputCounter != MAX_CHAR_COUNT || Local_u8KPDKey != '!' || Local_u8KPDKey != '=' || Local_u8KPDKey != '/' || Local_u8KPDKey != '+' || Local_u8KPDKey != '*' || Local_u8KPDKey != '-')
 		{
 			if(Local_u8InputCounter == 0)
 			{
@@ -73,7 +74,7 @@ void main(void)
 		/*Store digits in the second number variable if operator is chosen*/
 		if(Local_u8Operator != 0)
 		{
-			while(Local_u8InputCounter != 16 || Local_u8KPDKey != '!' || Local_u8KPDKey != '=' || Local_u8KPDKey != '/' || Local_u8KPDKey != '+' || Local_u8KPDKey != '*' || Local_u8KPDKey != '-')
+			while(Local_u8InputCounter != MAX_CHAR_COUNT || Local_u8KPDKey != '!' || Local_u8KPDKey != '=' || Local_u8KPDKey != '/' || Local_u8KPDKey != '+' || Local_u8KPDKey != '*' || Local_u8KPDKey != '-')
 			{
 				do
 				{
