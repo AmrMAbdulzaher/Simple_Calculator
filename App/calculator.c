@@ -109,7 +109,7 @@ void main(void)
 			}
 			else
 			{
-				Local_s32ResultFractionPart= (sint32)((((sint32)Local_s16FirstNumber % (sint32)Local_s16SecondNumber)*100L)/(sint32)Local_s16SecondNumber);
+				Local_s32ResultFractionPart= (sint32)((((sint32)Local_s16FirstNumber % (sint32)Local_s16SecondNumber)*10L)/(sint32)Local_s16SecondNumber);
 				Local_s32ResultIntegerPart = (sint32)((sint32)Local_s16FirstNumber / (sint32)Local_s16SecondNumber);
 			}
 			break;
